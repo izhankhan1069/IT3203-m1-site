@@ -47,3 +47,41 @@ footer {
   padding: 10px;
   margin-top: 20px;
 }
+.quiz-question {
+  background-color: #f5f5f5;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.quiz-buttons {
+  margin-top: 10px;
+}
+
+.quiz-buttons button {
+  padding: 8px 12px;
+  margin-right: 8px;
+  border-radius: 4px;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+.quiz-buttons button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+#results {
+  margin-top: 20px;
+}
+
+.pass {
+  color: green;
+  font-weight: bold;
+}
+
+.fail {
+  color: red;
+  font-weight: bold;
+}
+
