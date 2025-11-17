@@ -22,54 +22,50 @@
 
   <main>
     <h2>Test What You Learned</h2>
-    <p>This quiz is based on my project about HTML structure, CSS styling, and basic layout ideas.</p>
+    <p>This quiz is based on my website about HTML structure, CSS styling, and basic layout ideas like semantic tags and responsive design.</p>
 
     <form id="quizForm">
-      <!-- Q1: fill in the blank -->
+
       <div class="quiz-question">
         <h3>1. Fill in the blank</h3>
-        <p>What does <strong>HTML</strong> stand for?</p>
-        <input type="text" id="q1" name="q1" placeholder="Type your answer">
+        <p>What does <strong>CSS</strong> mainly control on a web page?</p>
+        <input type="text" id="q1" name="q1" placeholder="Type your answer here">
       </div>
 
-      <!-- Q2: single choice -->
       <div class="quiz-question">
         <h3>2. Single choice</h3>
-        <p>Which tag is best for the main content area of a page?</p>
+        <p>Which HTML tag is best for wrapping the main content area of a page?</p>
         <label><input type="radio" name="q2" value="div"> &lt;div&gt;</label><br>
         <label><input type="radio" name="q2" value="main"> &lt;main&gt;</label><br>
         <label><input type="radio" name="q2" value="section"> &lt;section&gt;</label><br>
         <label><input type="radio" name="q2" value="body"> &lt;body&gt;</label>
       </div>
 
-      <!-- Q3: single choice -->
       <div class="quiz-question">
         <h3>3. Single choice</h3>
-        <p>Which CSS property controls the text color?</p>
-        <label><input type="radio" name="q3" value="font-size"> font-size</label><br>
-        <label><input type="radio" name="q3" value="color"> color</label><br>
-        <label><input type="radio" name="q3" value="background-color"> background-color</label><br>
-        <label><input type="radio" name="q3" value="border"> border</label>
+        <p>What is the main goal of semantic HTML in a page layout?</p>
+        <label><input type="radio" name="q3" value="faster"> To make the page load faster</label><br>
+        <label><input type="radio" name="q3" value="animations"> To add more animations</label><br>
+        <label><input type="radio" name="q3" value="meaning"> To give the structure more meaning</label><br>
+        <label><input type="radio" name="q3" value="colors"> To change the colors</label>
       </div>
 
-      <!-- Q4: single choice -->
       <div class="quiz-question">
         <h3>4. Single choice</h3>
-        <p>Which layout tool is commonly used to build a responsive navigation bar?</p>
-        <label><input type="radio" name="q4" value="flexbox"> Flexbox</label><br>
-        <label><input type="radio" name="q4" value="table"> HTML tables</label><br>
-        <label><input type="radio" name="q4" value="float"> float</label><br>
-        <label><input type="radio" name="q4" value="inline"> inline elements</label>
+        <p>What does “responsive design” mean in web development?</p>
+        <label><input type="radio" name="q4" value="click"> The site changes color when clicked</label><br>
+        <label><input type="radio" name="q4" value="screens"> The site adjusts to different screen sizes</label><br>
+        <label><input type="radio" name="q4" value="images"> The site loads more images</label><br>
+        <label><input type="radio" name="q4" value="javascript"> The site always uses JavaScript</label>
       </div>
 
-      <!-- Q5: multi-select -->
       <div class="quiz-question">
         <h3>5. Multi-select</h3>
-        <p>Which of the following are benefits of semantic HTML? (Select all that apply.)</p>
-        <label><input type="checkbox" name="q5" value="accessibility"> Better accessibility</label><br>
-        <label><input type="checkbox" name="q5" value="seo"> Better SEO</label><br>
-        <label><input type="checkbox" name="q5" value="readability"> Easier to read code</label><br>
-        <label><input type="checkbox" name="q5" value="faster"> Automatically faster performance</label>
+        <p>Which of the following are common CSS layout tools? (Select all that apply.)</p>
+        <label><input type="checkbox" name="q5" value="flexbox"> Flexbox</label><br>
+        <label><input type="checkbox" name="q5" value="grid"> CSS Grid</label><br>
+        <label><input type="checkbox" name="q5" value="javascript"> JavaScript</label><br>
+        <label><input type="checkbox" name="q5" value="tables"> HTML tables</label>
       </div>
 
       <div class="quiz-buttons">
@@ -86,99 +82,93 @@
   </footer>
 
   <script>
-    // very simple quiz script
+
     const form = document.getElementById('quizForm');
-    const results = document.getElementById('results');
+    const resultsDiv = document.getElementById('results');
     const resetBtn = document.getElementById('resetBtn');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-      let total = 0;
-      const maxScore = 100; // 5 questions, 20 points each
-      const feedback = [];
+      let totalScore = 0;
+      const maxScore = 100;
+      const details = [];
 
-      // Q1
-      const q1 = document.getElementById('q1').value.trim().toLowerCase();
-      const q1Correct = "hypertext markup language";
+      const q1Value = document.getElementById('q1').value.trim().toLowerCase();
+      const q1Keywords = ["style", "styling", "design", "appearance"];
       let q1Score = 0;
-      if (q1 === q1Correct) {
+      let q1Correct = q1Keywords.some(word => q1Value.includes(word));
+      if (q1Correct) {
         q1Score = 20;
-        total += q1Score;
-        feedback.push("Q1: Correct (20/20). Answer: HyperText Markup Language.");
+        totalScore += q1Score;
+        details.push("Q1: Correct (20/20). CSS mainly controls the styling/appearance of a page.");
       } else {
-        feedback.push("Q1: Incorrect (0/20). Correct answer: HyperText Markup Language.");
+        details.push("Q1: Incorrect (0/20). CSS mainly controls the styling/appearance of a page.");
       }
 
-      // Q2
       let q2Score = 0;
       const q2 = form.q2.value;
       if (q2 === "main") {
         q2Score = 20;
-        total += q2Score;
-        feedback.push("Q2: Correct (20/20). Answer: <main>.");
+        totalScore += q2Score;
+        details.push("Q2: Correct (20/20). The <main> tag is best for the main content area.");
       } else {
-        feedback.push("Q2: Incorrect (0/20). Correct answer: <main>.");
+        details.push("Q2: Incorrect (0/20). Correct answer: <main>.");
       }
 
-      // Q3
       let q3Score = 0;
       const q3 = form.q3.value;
-      if (q3 === "color") {
+      if (q3 === "meaning") {
         q3Score = 20;
-        total += q3Score;
-        feedback.push("Q3: Correct (20/20). Answer: color.");
+        totalScore += q3Score;
+        details.push("Q3: Correct (20/20). Semantic HTML gives the structure more meaning.");
       } else {
-        feedback.push("Q3: Incorrect (0/20). Correct answer: color.");
+        details.push("Q3: Incorrect (0/20). Correct answer: to give the structure more meaning.");
       }
 
-      // Q4
       let q4Score = 0;
       const q4 = form.q4.value;
-      if (q4 === "flexbox") {
+      if (q4 === "screens") {
         q4Score = 20;
-        total += q4Score;
-        feedback.push("Q4: Correct (20/20). Answer: Flexbox.");
+        totalScore += q4Score;
+        details.push("Q4: Correct (20/20). Responsive design means it adjusts to different screen sizes.");
       } else {
-        feedback.push("Q4: Incorrect (0/20). Correct answer: Flexbox.");
+        details.push("Q4: Incorrect (0/20). Correct answer: the site adjusts to different screen sizes.");
       }
 
-      // Q5 (multi-select)
       let q5Score = 0;
       const checked = Array.from(document.querySelectorAll('input[name="q5"]:checked')).map(c => c.value);
-      const correctValues = ["accessibility", "seo", "readability"];
-
-      const hasAllCorrect = correctValues.every(v => checked.includes(v));
-      const hasNoExtra = checked.every(v => correctValues.includes(v));
-
+      const correctSet = ["flexbox", "grid"];
+      const hasAllCorrect = correctSet.every(v => checked.includes(v));
+      const hasNoExtra = checked.every(v => correctSet.includes(v));
       if (hasAllCorrect && hasNoExtra) {
         q5Score = 20;
-        total += q5Score;
-        feedback.push("Q5: Correct (20/20). Answer: accessibility, better SEO, and easier to read code.");
+        totalScore += q5Score;
+        details.push("Q5: Correct (20/20). Flexbox and CSS Grid are common layout tools.");
       } else {
-        feedback.push("Q5: Incorrect (0/20). Correct answer: accessibility, better SEO, and easier to read code.");
+        details.push("Q5: Incorrect (0/20). Correct answer: Flexbox and CSS Grid.");
       }
 
-      const passed = total >= 70;
+      const passed = totalScore >= 70;
 
-      // show results
       let html = "";
       html += `<h2>Your Results</h2>`;
-      html += `<p><strong>Total score:</strong> <span class="${passed ? 'pass' : 'fail'}">${total}/${maxScore}</span></p>`;
+      html += `<p><strong>Total score:</strong> <span class="${passed ? 'pass' : 'fail'}">${totalScore}/${maxScore}</span></p>`;
       html += `<p><strong>Result:</strong> <span class="${passed ? 'pass' : 'fail'}">${passed ? 'Pass' : 'Fail'}</span></p>`;
       html += `<h3>Question Breakdown</h3>`;
       html += "<ul>";
-      feedback.forEach(line => {
+      details.forEach(line => {
         html += `<li>${line}</li>`;
       });
       html += "</ul>";
 
-      results.innerHTML = html;
+      resultsDiv.innerHTML = html;
     });
 
+    // Reset button clears everything
     resetBtn.addEventListener('click', function () {
       form.reset();
-      results.innerHTML = "";
+      resultsDiv.innerHTML = "";
     });
   </script>
 </body>
