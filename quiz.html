@@ -10,29 +10,30 @@
   <header>
     <h1>HTML & CSS Self-Check Quiz</h1>
     <nav>
-  <a href="index.html">Home</a>
-  <a href="overview.html">Overview</a>
-  <a href="semantics.html">Semantics</a>
-  <a href="design.html">Design</a>
-  <a href="concepts.html">Concepts</a>
-  <a href="sources.html">Sources</a>
-  <a href="quiz.html">Quiz</a>
-</nav>
-
+      <a href="index.html">Home</a>
+      <a href="overview.html">Overview</a>
+      <a href="semantics.html">Semantics</a>
+      <a href="design.html">Design</a>
+      <a href="concepts.html">Concepts</a>
+      <a href="sources.html">Sources</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
   <main>
     <h2>Test What You Learned</h2>
     <p>This quiz is based on my website about HTML structure, CSS styling, and basic layout ideas like semantic tags and responsive design.</p>
 
+    <!-- Simple quiz form -->
     <form id="quizForm">
-
+      <!-- Q1: fill in the blank -->
       <div class="quiz-question">
         <h3>1. Fill in the blank</h3>
         <p>What does <strong>CSS</strong> mainly control on a web page?</p>
         <input type="text" id="q1" name="q1" placeholder="Type your answer here">
       </div>
 
+      <!-- Q2: single choice -->
       <div class="quiz-question">
         <h3>2. Single choice</h3>
         <p>Which HTML tag is best for wrapping the main content area of a page?</p>
@@ -42,6 +43,7 @@
         <label><input type="radio" name="q2" value="body"> &lt;body&gt;</label>
       </div>
 
+      <!-- Q3: single choice -->
       <div class="quiz-question">
         <h3>3. Single choice</h3>
         <p>What is the main goal of semantic HTML in a page layout?</p>
@@ -51,6 +53,7 @@
         <label><input type="radio" name="q3" value="colors"> To change the colors</label>
       </div>
 
+      <!-- Q4: single choice -->
       <div class="quiz-question">
         <h3>4. Single choice</h3>
         <p>What does “responsive design” mean in web development?</p>
@@ -60,6 +63,7 @@
         <label><input type="radio" name="q4" value="javascript"> The site always uses JavaScript</label>
       </div>
 
+      <!-- Q5: multi-select -->
       <div class="quiz-question">
         <h3>5. Multi-select</h3>
         <p>Which of the following are common CSS layout tools? (Select all that apply.)</p>
@@ -83,7 +87,7 @@
   </footer>
 
   <script>
-
+    // handle quiz grading
     const form = document.getElementById('quizForm');
     const resultsDiv = document.getElementById('results');
     const resetBtn = document.getElementById('resetBtn');
@@ -95,10 +99,11 @@
       const maxScore = 100;
       const details = [];
 
+      // Q1: fill in the blank
       const q1Value = document.getElementById('q1').value.trim().toLowerCase();
       const q1Keywords = ["style", "styling", "design", "appearance"];
       let q1Score = 0;
-      let q1Correct = q1Keywords.some(word => q1Value.includes(word));
+      const q1Correct = q1Keywords.some(word => q1Value.includes(word));
       if (q1Correct) {
         q1Score = 20;
         totalScore += q1Score;
@@ -107,6 +112,7 @@
         details.push("Q1: Incorrect (0/20). CSS mainly controls the styling/appearance of a page.");
       }
 
+      // Q2: main tag
       let q2Score = 0;
       const q2 = form.q2.value;
       if (q2 === "main") {
@@ -117,6 +123,7 @@
         details.push("Q2: Incorrect (0/20). Correct answer: <main>.");
       }
 
+      // Q3: semantic meaning
       let q3Score = 0;
       const q3 = form.q3.value;
       if (q3 === "meaning") {
@@ -127,6 +134,7 @@
         details.push("Q3: Incorrect (0/20). Correct answer: to give the structure more meaning.");
       }
 
+      // Q4: responsive design
       let q4Score = 0;
       const q4 = form.q4.value;
       if (q4 === "screens") {
@@ -137,11 +145,13 @@
         details.push("Q4: Incorrect (0/20). Correct answer: the site adjusts to different screen sizes.");
       }
 
+      // Q5: multi-select - flexbox + grid
       let q5Score = 0;
       const checked = Array.from(document.querySelectorAll('input[name="q5"]:checked')).map(c => c.value);
       const correctSet = ["flexbox", "grid"];
       const hasAllCorrect = correctSet.every(v => checked.includes(v));
       const hasNoExtra = checked.every(v => correctSet.includes(v));
+
       if (hasAllCorrect && hasNoExtra) {
         q5Score = 20;
         totalScore += q5Score;
@@ -152,6 +162,7 @@
 
       const passed = totalScore >= 70;
 
+      // build results area
       let html = "";
       html += `<h2>Your Results</h2>`;
       html += `<p><strong>Total score:</strong> <span class="${passed ? 'pass' : 'fail'}">${totalScore}/${maxScore}</span></p>`;
@@ -166,7 +177,7 @@
       resultsDiv.innerHTML = html;
     });
 
-    // Reset button clears everything
+    // Reset button clears form and results
     resetBtn.addEventListener('click', function () {
       form.reset();
       resultsDiv.innerHTML = "";
@@ -174,4 +185,3 @@
   </script>
 </body>
 </html>
-
