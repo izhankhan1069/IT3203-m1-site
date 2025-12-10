@@ -1,40 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- page encoding -->
   <meta charset="UTF-8">
+
+  <!-- to help the site be good on phone and computers -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- page title shown in browser tab -->
   <title>Semantics - HTML & CSS Project</title>
+
+  <!-- main stylesheet used across the whole site -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- top section with page title and navigation -->
   <header>
     <h1>Understanding HTML Semantics</h1>
-  <nav>
-  <a href="index.html">Home</a>
-  <a href="overview.html">Overview</a>
-  <a href="parallax.html">Parallax</a>
-  <a href="perf.html">Performance</a>
-  <a href="semantics.html">Semantics</a>
-  <a href="sources.html">Sources</a>
-  <a href="quiz.html">Quiz</a>
-</nav>
 
-
+    <!-- main navigation menu -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="overview.html">Overview</a>
+      <a href="parallax.html">Parallax</a>
+      <a href="perf.html">Performance</a>
+      <a href="semantics.html">Semantics</a>
+      <a href="sources.html">Sources</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
- <main>
-  <h2>Semantic HTML and Page Meaning</h2>
-  <p>One big thing I noticed from studying the template is how important semantic HTML is. Tags like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> do more than just hold content. They tell the browser and assistive technologies what each part of the page is supposed to represent.</p>
+  <!-- main content area for this page -->
+  <main>
 
-  <p>In my own pages, I tried to follow this idea by wrapping the main content in <code>&lt;main&gt;</code>, keeping the site title and menu inside <code>&lt;header&gt;</code>, and ending every page with a simple <code>&lt;footer&gt;</code>. This makes the structure more predictable and easier to follow when someone reads the HTML directly.</p>
+    <!-- section heading -->
+    <h2>Semantic HTML and Page Meaning</h2>
 
-  <p>Using semantic tags also helps with accessibility and search engines, even if my project is small. A clear hierarchy of headings and sections makes it easier for screen readers to move through the page. It also helps me as a learner, because I can quickly see where each part of the site starts and ends.</p>
-</main>
+    <!-- explaining why semantic tags matter from my experience -->
+    <p>
+      One big thing I noticed from studying the template is how important semantic HTML is.
+      Tags like <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, 
+      <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> do more than just hold content.
+      They help explain what each part of the page is meant to be.
+    </p>
 
+    <!-- describing how I applied semantic tags on my site -->
+    <p>
+      In my own pages, I tried to follow this idea by wrapping the main content in 
+      <code>&lt;main&gt;</code>, placing the site title and menu inside 
+      <code>&lt;header&gt;</code>, and ending each page with a simple 
+      <code>&lt;footer&gt;</code>.
+      This makes the code easier to understand when looking at it.
+    </p>
 
+    <!-- accessibility and structure explanation -->
+    <p>
+      Semantic tags also help with accessibility and organization.
+      Screen readers can move through the page better when the structure is clear.
+      It also makes the site easier for me to maintain and update later.
+    </p>
+
+  </main>
+
+  <!-- footer section shown at the bottom of the page -->
   <footer>
-    <p>This site is a class project for IT 3203. </p>
+    <p>This site is a class project for IT 3203.</p>
   </footer>
+
 </body>
 </html>
 
