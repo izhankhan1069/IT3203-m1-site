@@ -10,7 +10,7 @@ form.addEventListener('submit', function (event) {
   const maxScore = 100;
   const details = [];
 
-  // Q1: fill in the blank
+  // Q1 is fill in the blank
   const q1Value = document.getElementById('q1').value.trim().toLowerCase();
   const q1Keywords = ["style", "styling", "design", "appearance"];
   let q1Score = 0;
@@ -23,7 +23,7 @@ form.addEventListener('submit', function (event) {
     details.push("Q1: Incorrect (0/20). CSS mainly controls the styling/appearance of a page.");
   }
 
-  // Q2: main tag
+  // Q2 is main tag
   let q2Score = 0;
   const q2 = form.q2.value;
   if (q2 === "main") {
@@ -34,7 +34,7 @@ form.addEventListener('submit', function (event) {
     details.push("Q2: Incorrect (0/20). Correct answer: <main>.");
   }
 
-  // Q3: semantic meaning
+  // Q3 is semantic meaning
   let q3Score = 0;
   const q3 = form.q3.value;
   if (q3 === "meaning") {
@@ -45,7 +45,7 @@ form.addEventListener('submit', function (event) {
     details.push("Q3: Incorrect (0/20). Correct answer: to give the structure more meaning.");
   }
 
-  // Q4: responsive design
+  // Q4 is about responsive design
   let q4Score = 0;
   const q4 = form.q4.value;
   if (q4 === "screens") {
@@ -56,7 +56,7 @@ form.addEventListener('submit', function (event) {
     details.push("Q4: Incorrect (0/20). Correct answer: the site adjusts to different screen sizes.");
   }
 
-  // Q5: multi-select - flexbox + grid
+  // Q5 is multiple choices with a grid box
   let q5Score = 0;
   const checked = Array.from(document.querySelectorAll('input[name="q5"]:checked')).map(c => c.value);
   const correctSet = ["flexbox", "grid"];
