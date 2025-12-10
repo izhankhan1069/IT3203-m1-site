@@ -132,9 +132,6 @@ td {
   font-weight: bold;
 }
 
-/* ============================= */
-/* Responsive Design - Step 4 */
-/* ============================= */
 
 /* Small screens (phones) */
 @media (max-width: 600px) {
@@ -169,7 +166,7 @@ td {
   }
 }
 
-/* Medium screens (tablets) */
+/* Medium screens */
 @media (min-width: 601px) and (max-width: 900px) {
   nav {
     display: flex;
