@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- page setup and metadata -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Design - HTML & CSS Project</title>
+
+  <!-- link to main stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- page header -->
   <header>
     <h1>Design Choices</h1>
-  <nav>
-  <a href="index.html">Home</a>
-  <a href="overview.html">Overview</a>
-  <a href="parallax.html">Parallax</a>
-  <a href="perf.html">Performance</a>
-  <a href="semantics.html">Semantics</a>
-  <a href="sources.html">Sources</a>
-  <a href="quiz.html">Quiz</a>
-</nav>
 
-
+    <!-- navigation menu -->
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="overview.html">Overview</a>
+      <a href="parallax.html">Parallax</a>
+      <a href="perf.html">Performance</a>
+      <a href="semantics.html">Semantics</a>
+      <a href="sources.html">Sources</a>
+      <a href="quiz.html">Quiz</a>
+    </nav>
   </header>
 
+  <!-- main content area -->
   <main>
-  <h2>Code Structure and Performance</h2>
-  <p>While I did not run technical performance tests, I still paid attention to how the structure of the HTML and CSS can affect how a page loads and behaves. A simple layout with fewer files is usually easier for the browser to handle. That is one of the reasons I kept everything in a single CSS file and used a separate JavaScript file only for the quiz.</p>
 
-  <p>Keeping the HTML clean also matters significantly. Using proper tags, not repeating the same code too much, and grouping related content inside clear sections all help other people read the code. It would also make it easier to update or expand the site later without breaking everything.</p>
+    <!-- section talking about structure and performance -->
+    <h2>Code Structure and Performance</h2>
 
-  <p>On the visual side, I tried to avoid huge images and made sure that images and tables can adjust to the screen width. This not only helps on mobile, but can also reduce awkward scrolling and slow loading. Overall, my goal was not to chase perfect performance, but to build something that feels light, simple, and easy to use.</p>
-</main>
+    <p>While I did not run technical performance tests, I still paid attention to how the structure of the HTML and CSS can affect how a page loads and behaves. A simple layout with fewer files is usually easier for the browser to handle. That is one of the reasons I kept everything in a single CSS file and used a separate JavaScript file only for the quiz.</p>
 
+    <p>Keeping the HTML clean also matters significantly. Using proper tags, not repeating the same code too much, and grouping related content inside clear sections all help other people read the code. It would also make it easier to update or expand the site later without breaking everything.</p>
 
+    <p>On the visual side, I tried to avoid huge images and made sure that images and tables can adjust to the screen width. This not only helps on mobile, but can also reduce awkward scrolling and slow loading. Overall, my goal was not to chase perfect performance, but to build something that feels light, simple, and easy to use.</p>
+
+  </main>
+
+  <!-- footer section -->
   <footer>
     <p>This site is a class project for IT 3203.</p>
   </footer>
+
 </body>
 </html>
 
